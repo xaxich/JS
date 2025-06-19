@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        Список музыкальных групп
+    </title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body background="res/bg.jpg" background-repeat="repeat">
+
+    <div class="parameters">
+        <details open>
+            <summary>График</summary>
+            <form id="graph">
+                <div class="row">
+                    <div class="column">
+                        <h4>Значение по оси ОХ</h4>
+                        <div>
+                            <input type="radio" name="xvalue" value="name" checked>
+                            <label>Название группы</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="xvalue" value="country">
+                            <label>Страна</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="xvalue" value="year">
+                            <label>Год основания</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="xvalue" value="genre">
+                            <label>Жанр</label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h4>Результат</h4>
+                        <div>
+                            <input type="checkbox" name="yvalue" value="avgDuration">
+                            <label>Ср. длительность</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="yvalue" value="listens">
+                            <label>Прослушивания</label>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <div>
+                    Тип диаграммы:
+                    <select id="diagramType">
+                        <option value="point">Точечная</option>
+                        <option value="line">График</option>
+                        <option value="bar">Столбчатый</option>
+                    </select>
+                </div>
+
+                <svg>
+
+                </svg>
+                <input type="button" value="Построить" onclick="buildGraph(this.form)">
+            </form>
+        </details>
+        <br>
+        <details>
+            <summary> Фильтр </summary>
+            <form>
+                <p>
+                    Название:
+                    <input type="text" name="name">
+                </p>
+
+                <p>
+                    Страна:
+                    <input type="text" name="country">
+                </p>
+
+                <p>
+                    Год основания: от
+                    <input type="text" name="yearFrom">
+                    до
+                    <input type="text" name="yearTo">
+
+                </p>
+
+                <p>
+                    Жанр:
+                    <input type="text" name="genre">
+                </p>
+
+                <p>
+                    Самая популярная песня:
+                    <input type="text" name="popular">
+                </p>
+
+                <p>
+                    Последняя песня:
+                    <input type="text" name="last">
+                </p>
+
+                <p>
+                    Средняя продолжительность: от
+                    <input type="text" name="avgDurationFrom">
+                    до
+                    <input type="text" name="avgDurationTo">
+                </p>
+
+                <p>
+                    Прослушивания: от
+                    <input type="text" name="listensFrom">
+                    до
+                    <input type="text" name="listensTo">
+                </p>
+
+                <input type="button" value="Найти" id="filterButton">
+                <input type="button" value="Очистить фильтры" onclick="clearFilter(this.form)">
+            </form>
+        </details>
+        <br>
+
+        <details>
+            <summary> Сортировка </summary>
+            <form id="sort">
+                <p>
+                    Первый уровень:
+                    <select id="firstLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="firstLevelDesc">
+                </p>
+
+                <p>
+
+                    Второй уровень:
+                    <select id="secondLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="secondLevelDesc">
+
+                </p>
+
+                <p>
+                    Третий уровень:
+                    <select id="thirdLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="thirdLevelDesc">
+                </p>
+
+                <input type="button" value="Сортировать" id="sortButton">
+            </form>
+        </details>
+    </div>
+    <div class="main-table">
+
+        <table id="list">
+
+        </table>
+
+    </div>
+<script src="http://d3js.org/d3.v7.min.js"> </script>
+<script src="js/data.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/main.js"></script>
+<script src="js/table.js"></script>
+<script src="js/graph.js"></script>
+</body>

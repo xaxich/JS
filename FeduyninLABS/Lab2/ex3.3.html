@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        Список музыкальных групп
+    </title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body background="res/bg.jpg" background-repeat="repeat">
+
+    <div class="parameters">
+        <details>
+            <summary> График </summary>
+            <table cellspacing="20">
+                <tr>
+                    <td>Значение по оси ОХ</td>
+                    <td>Результат</td>
+                </tr>
+                <tr>
+                    <td>
+                        <form>
+                            <input type="radio" name="val_1" value="genre"> Жанр <br>
+                            <input type="radio" name="val_1" value="platform"> Жанр <br>
+                            <input type="radio" name="val_1" value="year"> Жанр
+                        </form>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="val_2" value="genre"> ЖаЖанрнр <br>
+                        <input type="checkbox" name="val_2" value="platform"> Жанр <br>
+                        <input type="checkbox" name="val_2" value="year"> Жанр
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Построить">
+            <p>
+                здесь будет график
+            </p>
+        </details>
+        <br>
+
+        <details>
+            <summary> Фильтр </summary>
+            <form>
+                <p>
+                    Название:
+                    <input type="text" name="name">
+                </p>
+
+                <p>
+                    Страна:
+                    <input type="text" name="country">
+                </p>
+
+                <p>
+                    Год основания: от
+                    <input type="text" name="yearFrom">
+                    до
+                    <input type="text" name="yearTo">
+
+                </p>
+
+                <p>
+                    Жанр:
+                    <input type="text" name="genre">
+                </p>
+
+                <p>
+                    Самая популярная песня:
+                    <input type="text" name="popular">
+                </p>
+
+                <p>
+                    Последняя песня:
+                    <input type="text" name="last">
+                </p>
+
+                <p>
+                    Средняя продолжительность: от
+                    <input type="text" name="avgDurationFrom">
+                    до
+                    <input type="text" name="avgDurationTo">
+                </p>
+
+                <p>
+                    Прослушивания: от
+                    <input type="text" name="listensFrom">
+                    до
+                    <input type="text" name="listensTo">
+                </p>
+
+                <input type="button" value="Найти" id="filterButton">
+                <input type="button" value="Очистить фильтры" onclick="clearFilter(this.form)">
+            </form>
+        </details>
+        <br>
+
+        <details>
+            <summary> Сортировка </summary>
+            <form id="sort">
+                <p>
+                    Первый уровень:
+                    <select id="firstLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="firstLevelDesc">
+                </p>
+
+                <p>
+
+                    Второй уровень:
+                    <select id="secondLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="secondLevelDesc">
+
+                </p>
+
+                <p>
+                    Третий уровень:
+                    <select id="thirdLevel">
+                    </select>
+                    по убыванию?
+                    <input type="checkbox" id="thirdLevelDesc">
+                </p>
+
+                <input type="button" value="Сортировать" id="sortButton">
+            </form>
+        </details>
+    </div>
+    <div class="main-table">
+
+        <table id="list">
+
+        </table>
+
+    </div>
+
+<script src="js/data.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/main.js"></script>
+<script src="js/table.js"></script>
+</body>

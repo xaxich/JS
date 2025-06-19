@@ -1,0 +1,22 @@
+.error {
+	border: thin red solid;
+}
+
+div {
+	margin: 10px auto;
+	width: 90%;
+	background: LightGrey;
+	border: solid medium black;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+td, th {
+	border: 1px solid black;
+	padding: 2px 6px;
+}
+
+table {
+	width: 100%;
+	border: 1px solid black;
+}

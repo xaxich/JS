@@ -1,0 +1,38 @@
+<html >
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="task">
+      <img src="res/Trap1.png" id="image">
+      <div class="input">
+        <form>
+          <div id="inputWayDiv">
+            <label><input type="radio" name="inputWay" value="0" checked>основание, боковые стороны и высоту к основанию</label><br>
+            <label><input type="radio" name="inputWay" value="1">основание, высоту к основанию и прилежащие к основанию углы</label><br>
+            <input type="button" value="Показать" onClick="showInputs(this.form)">
+          </div>
+          <div id="inputData">
+          </div>
+          <div id="outputWayDiv">
+            <p>
+              Найти: <br>
+              <label><input type="checkbox" id="task1" name="outputVars"> периметр</label><br>
+              <label><input type="checkbox" id="task2" name="outputVars"> неизвестные стороны</label><br>
+              <label><input type="checkbox" id="task3" name="outputVars"> угол между диагоналями</label><br>
+              <label><input type="checkbox" id="task4" name="outputVars"> диагонали</label>
+            </p>
+          </div>
+          <p>
+            <input type="button" value="Вычислить" onClick="calculate(this.form)">
+            <input type="button" value="Очистить" onClick="resetForm(this.form)">
+          </p>
+        </form>
+      </div>
+      <div id="output">
+      </div>
+    </div>
+  </body>
+  <script src="js/program.js"> </script>
+</html>
